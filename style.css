@@ -1,14 +1,75 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    padding: 20px;
+    background: #222;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
-h1, h2 {
-    color: #2c3e50;
+
+.ipad-homescreen {
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 60px 0 60px 0;
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
-ul {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    list-style-type: square;
+
+.ipad-homescreen::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(34,34,34,0.35);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.app-row, .app-icon {
+    position: relative;
+    z-index: 1;
+}
+
+.app-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.app-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    width: 80px;
+    transition: transform 0.1s;
+}
+
+.app-icon img {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    margin-bottom: 8px;
+    background: #fff;
+}
+
+.app-icon span {
+    font-size: 15px;
+    margin-top: 2px;
+    text-align: center;
+    text-shadow: 0 1px 4px #000;
+}
+
+.app-icon:active {
+    transform: scale(0.95);
 }
